@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">NC_shop</string>
+
+    <string name="product_list">服飾目錄</string>
+    <string name="shopping_cart">購買清單</string>
+    <string name="name">名稱</string>
+    <string name="unit_price">價格</string>
+    <string name="quantity">數量</string>
+    <string name="view">View</string>
+    <string name="action">Action</string>
+    <string name="order">訂購</string>
+    <string name="price">價格</string>
+    <string name="total_price">總價格</string>
+    <string name="remove">移除</string>
+    <string name="clear_cart">清空</string>
+    <string name="shop">商店</string>
+    <string name="delete_item">刪除</string>
+    <string name="delete_item_message">請問要刪除此商品嗎?</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+    <string name="buy">確定購買</string>
+
+</resources>
