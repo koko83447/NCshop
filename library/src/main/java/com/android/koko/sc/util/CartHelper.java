@@ -1,25 +1,43 @@
 package com.android.koko.sc.util;
 
-import com.android.koko.sc.model.Cart;
+import android.util.Log;
 
-/**
- * A helper class to retrieve the static shopping cart. Call {@code getCart()} to retrieve the shopping cart before you perform any operation on the shopping cart.
- *
- * @author Tony
- */
+import com.android.koko.sc.model.Cart;
+import com.android.koko.sc.model.Saleable;
+
+import java.util.Map;
+
+//在購物車執行操作前呼叫getCart
 public class CartHelper {
+    public static final String TAG = CartHelper.class.getSimpleName();
     private static Cart cart = new Cart();
 
-    /**
-     * Retrieve the shopping cart. Call this before perform any manipulation on the shopping cart.
-     *
-     * @return the shopping cart
-     */
+//檢索購物車
     public static Cart getCart() {
         if (cart == null) {
             cart = new Cart();
         }
-
         return cart;
+    }
+
+//購物車上所有商品MAP組成的字串
+    public static String getCartItemString() {
+        Cart cart = getCart();
+
+        StringBuilder stringBuilder = new StringBuilder();
+        String itemName;
+        Integer itemCount;
+        //商品名稱及其數量字串
+        for (Map.Entry<Saleable, Integer> item : cart.getItemWithQuantity().entrySet()) {
+            itemName = item.getKey().getName();
+            itemCount = item.getValue();
+
+            stringBuilder.append("\n"+itemName);
+            stringBuilder.append("一共");
+            stringBuilder.append(itemCount + "件 ");
+        }
+
+        Log.d(TAG, "getCartItemString: " + stringBuilder.toString());
+        return stringBuilder.toString();
     }
 }
